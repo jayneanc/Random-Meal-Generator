@@ -76,7 +76,6 @@ const getRandom = () => {
   const index = Math.floor(Math.random() * list.length);
   getResultTextNode.innerHTML = list[index].name;
   if (list[index].link) {
-    console.log(list[index])
     getResultTextNode.onclick = () => {
       window.open(list[index].link, "_blank");
     };
@@ -112,7 +111,7 @@ const setActiveType = (index) => {
   for (let i = 0; i < typesNode.length; i++) {
     if (i === activeType) {
       typesNode[i].style.opacity = 1;
-      typesNode[i].style.fontWeight = "bold";
+      typesNode[i].style.fontWeight = 900;
     } else {
       typesNode[i].style.opacity = 0.8;
       typesNode[i].style.fontWeight = "normal";
