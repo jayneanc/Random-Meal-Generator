@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="random meal, what to eat">
+    <meta name="title" content="Random Meal Generator">
+    <meta name="author" content="Jay-Nean Chen">
+    <!-- Style -->
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <div id="page">
+        <!-- List -->
+        <div class="flex h-center list">
+            <div class="flex h-between list-content">
+                <button onClick="setIsAdd(true)">新增美食</button>
+                <button onClick="setIsAdd(false)">今天吃什麼</button>
+            </div>
+        </div>
+        <!-- Add food -->
+        <div id="food-add" class="flex h-center">
+            <input type="text" />
+            <button>確定</button>
+        </div>
+        <!-- Get random meal -->
+        <div id="food-get">
+            <div id="food-get-choose" class="flex h-center">
+                <div class="flex-column dropdown">
+                    <a id="food-dropdown-select" class="select" onClick="toggleDropdown()">早餐 &#9660</a>
+                    <div id="food-dropdown-list" class="flex-column h-center content">
+                        <a onClick="setDropdown('早餐', 0)">早餐</a>
+                        <a onClick="setDropdown('菜餚', 1)">菜餚</a>
+                        <a onClick="setDropdown('餐點', 2)">餐點</a>
+                        <a onClick="setDropdown('甜點', 3)">甜點</a>
+                        <a onClick="setDropdown('湯品', 4)">湯品</a>
+                        <a onClick="setDropdown('飲料', 5)">飲料</a>
+                    </div>
+                </div>
+                <button onClick="getRandom()">確定</button>
+            </div>
+            <div id="food-get-result" class="flex h-center v-center">
+                <a id="food-get-result-text"></a>
+                <button onClick="toggleRandomBlock(true)">重選</button>
+            </div>
+        </div>
+        <!-- All foods -->
+        <div id="food-list" class="flex h-center">
+            <div class="flex-column food-list-content">
+                <div id="food-types" class="flex h-between">
+                    <a onClick="setActiveType(0)">早餐</a>
+                    <a onClick="setActiveType(1)">菜餚</a>
+                    <a onClick="setActiveType(2)">餐點</a>
+                    <a onClick="setActiveType(3)">甜點</a>
+                    <a onClick="setActiveType(4)">湯品</a>
+                    <a onClick="setActiveType(5)">飲料</a>
+                </div>
+                <div id="food-list-type"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="randomMeal.js"></script>
+</body>
+
+</html>

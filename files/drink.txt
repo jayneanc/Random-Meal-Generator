@@ -1,0 +1,5 @@
+豆漿, dr, null
+牛奶, dr, null
+巧克力牛奶, dr, null
+檸檬紅茶, dr, null
+多多綠茶, dr, null

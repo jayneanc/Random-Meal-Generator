@@ -1,0 +1,102 @@
+/* Page */
+#page {
+    height: 100vh;
+    width: 100vw;
+}
+
+#page:after {
+    content: "";
+    background-image: url("background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/* List */
+.list-content {
+    width: 25%;
+    margin-top: 8%;
+}
+
+/* Add food */
+#food-add {
+    margin-top: 60px;
+    display: none;
+}
+
+/* Get random food */
+#food-get {
+    margin-top: 60px;
+}
+
+#food-get button {
+    margin-left: 35px;
+}
+
+#food-get #food-get-result {
+    display: none;
+}
+
+#food-get #food-get-result a {
+    text-align: center;
+    width: 200px;
+    border-bottom: 2px solid var(--white);
+    background-color: var(--black-5);
+    padding: 8px 0;
+}
+
+/* Food list */
+#food-list {
+    margin-top: 60px;
+}
+
+#food-list .food-list-content {
+    height: 30%;
+    width: 90%;
+    padding: 40px;
+    background-color: var(--black-5)
+}
+
+#food-list #food-types a {
+    font-size: 18px;
+}
+
+#food-list .food-list-content a:hover {
+    color: var(--active);
+}
+
+#food-list #food-types {
+    border-top: 2px solid var(--white);
+    border-bottom: 2px solid var(--white);
+    padding: 20px 30px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+}
+
+#food-list #food-types a {
+    cursor: pointer;
+}
+
+#food-list #food-list-type {
+    padding: 20px 30px;
+}
+
+#food-list #food-list-type .content {
+    overflow-y: scroll;
+    height: 35vh;
+    width: 6vw;
+}
+
+#food-list #food-list-type a {
+    text-decoration: none;
+    color: var(--white);
+    margin-bottom: 10px;
+    text-align: center;
+}
