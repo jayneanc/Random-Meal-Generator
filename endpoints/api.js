@@ -6,7 +6,7 @@ const app = express();
 
 // Get types
 const { meals } = require("./meals");
-const { types, readFile } = meals;
+const { types, readFile, writeFile } = meals;
 readFile();
 
 // Adding Helmet to enhance your Rest API's security
@@ -22,6 +22,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send({ data: types });
 });
+
+// Defining another endpoint to add food to text
+app.post("/add", writeFile);
 
 // Starting the server
 app.listen(3001, () => {

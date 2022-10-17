@@ -114,20 +114,61 @@ const readFile = () => {
         const list = types[typeIdx].list;
         if (!list) {
           types[typeIdx].data.push(detail);
-        }
-        else {
-          list.forEach(item => {
+        } else {
+          list.forEach((item) => {
             if (item.type === fileType) {
               item.data.push(detail);
             }
-          })
+          });
         }
       });
     }
   }
 };
 
+// Add to file
+const writeFile = (req, res) => {
+  // Query
+  const { name, link, types, file } = req.query;
+
+  // Read file first to make sure there is no duplicate item
+  const contents = fs.readFileSync(`files/${file}.txt`, "utf-8");
+  const contentArray = contents.split(/\r?\n/);
+  let newContent = contents;
+  let duplicate = null;
+  if (contentArray[0] !== "") {
+    for (const line of contentArray) {
+      const column = line.split(", ");
+      if (name === column[0]) {
+        duplicate = "name";
+        break;
+      }
+
+      if (link === column[2]) {
+        duplicate = "link";
+        break;
+      }
+    }
+    newContent += `\n${name}, ${types}, ${link}`;
+  } else {
+    newContent = `${name}, ${types}, ${link}`;
+  }
+
+  // No duplicattion
+  if (duplicate) {
+    res.status(500).send({ duplicate });
+  } else {
+    fs.writeFile(`files/${file}.txt`, newContent, (err) => {
+      if (err) {
+        console.error(err);
+      }
+    });
+    res.status(200).send();
+  }
+};
+
 exports.meals = {
   types,
   readFile,
+  writeFile,
 };
