@@ -31,7 +31,7 @@ const setIsAdd = (state) => {
     getRandomNode.style.display = "none";
   } else {
     addNode.style.display = "none";
-    getRandomNode.style.display = "flex";
+    getRandomNode.style.display = "block";
   }
 };
 
