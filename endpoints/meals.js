@@ -12,7 +12,6 @@ const files = [
   "files/others.txt",
   "files/pork.txt",
   "files/porridge.txt",
-  "files/rice.txt",
   "files/riceBall.txt",
   "files/seafood.txt",
   "files/soup.txt",
@@ -45,14 +44,6 @@ const types = [
       { name: "海鮮", type: "seafood", data: [] },
       { name: "蔬菜", type: "veggies", data: [] },
       { name: "涼拌", type: "cold", data: [] },
-      { name: "其他", type: "others", data: [] },
-    ],
-  },
-  {
-    name: "餐點",
-    type: "meal",
-    list: [
-      { name: "飯", type: "rice", data: [] },
       { name: "麵", type: "noodle", data: [] },
       { name: "其他", type: "others", data: [] },
     ],
@@ -98,14 +89,12 @@ const readFile = () => {
           typeIdx = 0;
         } else if (elmnt === "d") {
           typeIdx = 1;
-        } else if (elmnt === "m") {
-          typeIdx = 2;
         } else if (elmnt === "de") {
-          typeIdx = 3;
+          typeIdx = 2;
         } else if (elmnt === "s") {
-          typeIdx = 4;
+          typeIdx = 3;
         } else if (elmnt === "dr") {
-          typeIdx = 5;
+          typeIdx = 4;
         } else {
           console.log("Wrong type: ", column);
         }

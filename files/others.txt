@@ -9,9 +9,26 @@
 海苔烤年糕, b d, https://home.meishichina.com/recipe-511354.html
 韭菜盒子, b, null
 蔥油餅, b, null
-煎餃, b m, null
+煎餃, b, null
 饅頭, b, null
 包子, b, null
 小籠包, b d, null
 酒釀湯圓, b de, null
 棉花糖夾心餅乾, de, null
+雙色麻糬, de, https://www.wecook123.com/recipe451/
+鮮奶燒麻糬, de, https://www.wecook123.com/0jjsw3uuyg0/
+法式焦糖烤布丁, de, https://www.wecook123.com/recipe475/
+雙皮奶, de, https://icook.tw/recipes/24688
+麻油腰花, d, https://www.wecook123.com/recipe719/
+韭黃炒豆干, d, https://www.wecook123.com/recipe812/
+蔭豉燒豆腐, d, https://www.wecook123.com/recipe910/
+滷味, d, https://www.wecook123.com/recipe813/
+炭烤臭豆腐, d, https://www.wecook123.com/zmak6cqe7cc/
+壽喜燒, d, https://www.wecook123.com/maxbingxiang9/
+石頭火鍋, d, https://icook.tw/recipes/289359
+部隊鍋, d, https://www.wecook123.com/cookingkai30/
+咖哩豆腐煲, d, https://www.wecook123.com/recipe112/
+碗粿, d, https://www.wecook123.com/recipe388/
+台式海鮮煎, d, https://www.wecook123.com/recipe378/
+韓式海鮮煎餅, d, https://www.wecook123.com/recipe581/
+日式大阪燒, d, https://www.wecook123.com/recipe659/

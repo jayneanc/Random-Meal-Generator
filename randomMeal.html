@@ -16,46 +16,100 @@
         <!-- List -->
         <div class="flex h-center list">
             <div class="flex h-between list-content">
-                <button onClick="setIsAdd(true)">新增美食</button>
-                <button onClick="setIsAdd(false)">今天吃什麼</button>
+                <button onClick="setIsAdd(true)">新增美食 Add new dishes</button>
+                <button onClick="setIsAdd(false)">今天吃什麼 What to eat?</button>
             </div>
         </div>
         <!-- Add food -->
-        <div id="food-add" class="flex h-center">
-            <input type="text" />
-            <button>確定</button>
+        <div id="food-add" class="flex-column v-center">
+            <div class="flex h-center v-center add-input">
+                <a class="title">菜名 Dish Name:</a>
+                <input id="food-input1" type="text" />
+                <a class="title">連結 Link:</a>
+                <input id="food-input2" type="text" />
+            </div>
+            <div class="flex h-center v-center">
+                <a class="title">類型 Types:</a>
+                <div class="flex-column dropdown">
+                    <a id="food-dropdown-select1" class="select" onClick="toggleDropdown(1)">&#9660</a>
+                    <div id="food-dropdown-list1" class="flex-column content">
+                        <a onClick="setDropdown(null, 1, 0)">早餐 / breakfast
+                            <span></span>
+                        </a>
+                        <a onClick="setDropdown(null, 1, 1)">菜餚 / dishes
+                            <span></span>
+                        </a>
+                        <a onClick="setDropdown(null, 1, 2)">甜點 / dessert
+                            <span></span>
+                        </a>
+                        <a onClick="setDropdown(null, 1, 3)">湯品 / soup
+                            <span></span>
+                        </a>
+                        <a onClick="setDropdown(null, 1, 4)">飲料 / drink
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+                <a class="title">檔名 File Name:</a>
+                <div class="flex-column dropdown">
+                    <a id="food-dropdown-select2" class="select" onClick="toggleDropdown(2)">粥 / porridge &#9660</a>
+                    <div id="food-dropdown-list2" class="flex-column content">
+                        <p>早餐 Breakfast:</p>
+                        <a onClick="setDropdown('粥 / porridge', 2)">粥 / porridge</a>
+                        <a onClick="setDropdown('飯糰 / riceBall', 2)">飯糰 / riceBall</a>
+                        <a onClick="setDropdown('吐司 / toast', 2)">吐司 / toast</a>
+                        <p>肉類 Meat:</p>
+                        <a onClick="setDropdown('牛肉 / beef', 2)">牛肉 / beef</a>
+                        <a onClick="setDropdown('雞肉 / chicken', 2)">雞肉 / chicken</a>
+                        <a onClick="setDropdown('羊肉 / lamb', 2)">羊肉 / lamb</a>
+                        <a onClick="setDropdown('豬肉 / pork', 2)">豬肉 / pork</a>
+                        <a onClick="setDropdown('海鮮 / seafood', 2)">海鮮 / seafood</a>
+                        <p>餐點 Dishes:</p>
+                        <a onClick="setDropdown('飯類 / rice', 2)">飯類 / rice</a>
+                        <a onClick="setDropdown('麵類 / noodle', 2)">麵類 / noodle</a>
+                        <p>其他 Others:</p>
+                        <a onClick="setDropdown('蛋類 / egg', 2)">蛋類 / egg</a>
+                        <a onClick="setDropdown('涼拌菜 / cold', 2)">涼拌菜 / cold</a>
+                        <a onClick="setDropdown('湯品 / soup', 2)">湯品 / soup</a>
+                        <a onClick="setDropdown('飲料 / drink', 2)">飲料 / drink</a>
+                        <a onClick="setDropdown('蔬菜 / veggies', 2)">蔬菜 / veggies</a>
+                        <a onClick="setDropdown('其他 / others', 2)">其他 / others</a>
+                    </div>
+                </div>
+                <button onClick="addToFile()">確定 Submit</button>
+            </div>
         </div>
         <!-- Get random meal -->
         <div id="food-get">
             <div id="food-get-choose" class="flex h-center">
                 <div class="flex-column dropdown">
-                    <a id="food-dropdown-select" class="select" onClick="toggleDropdown()">早餐 &#9660</a>
-                    <div id="food-dropdown-list" class="flex-column h-center content">
-                        <a onClick="setDropdown('早餐', 0)">早餐</a>
-                        <a onClick="setDropdown('菜餚', 1)">菜餚</a>
-                        <a onClick="setDropdown('餐點', 2)">餐點</a>
-                        <a onClick="setDropdown('甜點', 3)">甜點</a>
-                        <a onClick="setDropdown('湯品', 4)">湯品</a>
-                        <a onClick="setDropdown('飲料', 5)">飲料</a>
+                    <a id="food-dropdown-select3" class="select" onClick="toggleDropdown(3)">早餐 Breakfast &#9660</a>
+                    <div id="food-dropdown-list3" class="flex-column content">
+                        <a onClick="setDropdown('早餐 Breakfast', 3, 0)">早餐 Breakfast</a>
+                        <a onClick="setDropdown('菜餚 Dishes', 3, 1)">菜餚 Dishes</a>
+                        <a onClick="setDropdown('甜點 Dessert', 3, 2)">甜點 Dessert</a>
+                        <a onClick="setDropdown('湯品 Soup', 3, 3)">湯品 Soup</a>
+                        <a onClick="setDropdown('飲料 Drink', 3, 4)">飲料 Drink</a>
                     </div>
                 </div>
-                <button onClick="getRandom()">確定</button>
+                <button onClick="getRandom()">確定 Submit</button>
             </div>
             <div id="food-get-result" class="flex h-center v-center">
+                <a id="food-get-result-type"></a>
                 <a id="food-get-result-text"></a>
-                <button onClick="toggleRandomBlock(true)">重選</button>
+                <button onClick="getRandom()">重選 Pick again</button>
+                <button onClick="toggleRandomBlock(true)">回選單 Back to menu</button>
             </div>
         </div>
         <!-- All foods -->
         <div id="food-list" class="flex h-center">
             <div class="flex-column food-list-content">
                 <div id="food-types" class="flex h-between">
-                    <a onClick="setActiveType(0)">早餐</a>
-                    <a onClick="setActiveType(1)">菜餚</a>
-                    <a onClick="setActiveType(2)">餐點</a>
-                    <a onClick="setActiveType(3)">甜點</a>
-                    <a onClick="setActiveType(4)">湯品</a>
-                    <a onClick="setActiveType(5)">飲料</a>
+                    <a onClick="setActiveType(0)">早餐 Breakfast</a>
+                    <a onClick="setActiveType(1)">菜餚 Dishes</a>
+                    <a onClick="setActiveType(2)">甜點 Dessert</a>
+                    <a onClick="setActiveType(3)">湯品 Soup</a>
+                    <a onClick="setActiveType(4)">飲料 Drink</a>
                 </div>
                 <div id="food-list-type"></div>
             </div>

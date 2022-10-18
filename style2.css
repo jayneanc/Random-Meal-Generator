@@ -18,7 +18,7 @@
     z-index: -1;
 }
 
-/* List */
+/* Types menu */
 .list-content {
     width: 25%;
     margin-top: 8%;
@@ -26,13 +26,57 @@
 
 /* Add food */
 #food-add {
-    margin-top: 60px;
-    display: none;
+    margin-top: 45px;
+}
+
+#food-add .title {
+    margin-right: 10px;
+}
+
+#food-add .add-input {
+    width: 65%;
+    margin-bottom: 30px;
+}
+
+#food-add .add-input a {
+    white-space: nowrap;
+}
+
+#food-add .dropdown {
+    margin-right: 20px;
+}
+
+#food-add .dropdown .select {
+    height: 20px;
+}
+
+#food-add .dropdown .content {
+    margin-top: 44px;
+}
+
+#food-add .dropdown p {
+    margin: 0;
+    padding: 10px;
+    background-color: var(--black-8);
+}
+
+#food-add .dropdown:first-of-type a{
+    width: 500px;
+}
+
+#food-add #food-dropdown-list1 span {
+    margin-left: 5px;
+}
+
+#food-add #food-dropdown-list2 {
+    height: 500px;
+    overflow-y: scroll;
 }
 
 /* Get random food */
 #food-get {
     margin-top: 60px;
+    display: none;
 }
 
 #food-get button {
@@ -43,7 +87,8 @@
     display: none;
 }
 
-#food-get #food-get-result a {
+#food-get #food-get-result-text {
+    margin-left: 15px;
     text-align: center;
     width: 200px;
     border-bottom: 2px solid var(--white);
