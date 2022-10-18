@@ -1,4 +1,4 @@
-# randomMeal
+# Random Meal
 Random Meal Generator is a tool to help get ideas of what to eat everyday.
 
 Complile:
