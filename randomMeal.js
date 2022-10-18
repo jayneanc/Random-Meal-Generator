@@ -95,7 +95,10 @@ async function addToFile() {
 
   // Input
   const input1 = input1Node.value;
-  const input2 = input2Node.value;
+  let input2 = input2Node.value;
+  if (input2 === "null" || input2 === "") {
+    input2 = null;
+  }
 
   // Types
   let valueTypes = "";
@@ -117,7 +120,7 @@ async function addToFile() {
   } else {
     url +=
       `name=${input1}&` +
-      `link=${input2 === "null" ? null : input2}&` +
+      `link=${input2}&` +
       `types=${valueTypes}&` +
       `file=${valueFile[1]}`;
 
@@ -155,10 +158,12 @@ const resetAdd = () => {
   // Input
   input1Node.value = "";
   input1Node.focus();
+  input2Node.value = "";
   // Types
-  dropdownSelectList.forEach((item) => {
-    item.selected = false;
-  });
+  for (let i = 0; i < dropdownSelectList.length; i++) {
+    dropdownSelectList[i].selected = false;
+    dropdownList1SpanNode[i].innerHTML = "";
+  }
   dropdownSelect1 = "";
   dropdownSelect1Node.innerHTML = "";
   // File

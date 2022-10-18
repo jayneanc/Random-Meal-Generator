@@ -32,3 +32,6 @@
 台式海鮮煎, d, https://www.wecook123.com/recipe378/
 韓式海鮮煎餅, d, https://www.wecook123.com/recipe581/
 日式大阪燒, d, https://www.wecook123.com/recipe659/
+福州胡椒餅, b, https://caroleasylife.blogspot.com/2008/10/blog-post_1.html
+奶油車輪餅, b de, https://rulichsu.pixnet.net/blog/post/423822056-奶油車輪餅
+豆花, b de, https://icook.tw/recipes/422782
