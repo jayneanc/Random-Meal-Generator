@@ -15,6 +15,8 @@ app.use(helmet());
 // Using bodyParser to parse JSON bodies into JS objects
 app.use(bodyParser.json());
 
+const { exec } = require("node:child_process");
+
 // Enabling CORS for all requests
 app.use(cors());
 
@@ -30,3 +32,5 @@ app.post("/add", writeFile);
 app.listen(3001, () => {
   console.log("listening on port 3001");
 });
+
+exec("open randomMeal.html");
